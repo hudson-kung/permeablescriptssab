@@ -28,7 +28,7 @@
   <main class="shell">
     <nav><div class="brand"><img class="brand-logo" src="permeable-logo-dark.png" alt="Permeable Scripts logo" /> Permeable Scripts</div><div class="nav-links"><a href="#library">Library</a><a href="#how">How to use</a><a href="https://create.roblox.com/docs" target="_blank" rel="noreferrer">Roblox Docs ↗</a></div></nav>
     <section class="hero"><div><div class="eyebrow">A Studio-first collection</div><h1>Small scripts.<br><em>Big building blocks.</em></h1><p class="intro">Practical Roblox Luau patterns you can drop into your own experience, read, remix, and learn from.</p></div><aside class="statbox"><strong>06</strong><p>starter patterns, organized by purpose<br>and ready for Roblox Studio.</p></aside></section>
-    <section id="library"><div class="controls"><div class="filters"><span class="filter active">Steal a Brainrot</span></div><input class="search" id="search" placeholder="Search scripts…" aria-label="Search scripts" /></div><div class="library" id="cards"></div></section>
+    <section id="library"><div class="controls"><div class="filters"><span class="filter active">Steal A Brainrot Sniper Script</span></div><input class="search" id="search" placeholder="Search scripts…" aria-label="Search scripts" /></div><div class="library" id="cards"></div></section>
     <footer class="note" id="how"><b>Use responsibly.</b> These snippets are intended for experiences you own or have permission to edit. Paste each script into the indicated Roblox Studio location, then tailor it to your game.</footer>
   </main>
   <script>
@@ -42,7 +42,7 @@
       {name:'Click Counter',place:'StarterGui / LocalScript',desc:'Wire up a text button and keep a visible click total for your UI prototype.',code:`local button = script.Parent.TextButton\nlocal count = 0\nbutton.Activated:Connect(function()\n  count += 1\n  button.Text = "Clicks: " .. count\nend)`}
     ];
     const cards = document.querySelector('#cards'), search = document.querySelector('#search');
-    function render(){const term=search.value.toLowerCase(); cards.innerHTML=''; scripts.filter(s=>`${s.name} ${s.desc}`.toLowerCase().includes(term)).forEach(s=>{const el=document.createElement('article'); el.className='card'; const preview=s.image?`<img class="preview" src="${s.image}" alt="${s.name} preview" />`:''; el.innerHTML=`<span class="tag">Steal a Brainrot</span>${preview}<h2>${s.name}</h2><p>${s.desc}</p><div class="meta"><span>${s.place}</span><button class="copy">Get script</button></div>`;el.querySelector('button').onclick=async()=>{await navigator.clipboard.writeText(s.code);el.querySelector('button').textContent='Got it!';setTimeout(()=>el.querySelector('button').textContent='Get script',1100)};cards.appendChild(el)});}
+    function render(){const term=search.value.toLowerCase(); cards.innerHTML=''; scripts.filter(s=>`${s.name} ${s.desc}`.toLowerCase().includes(term)).forEach(s=>{const el=document.createElement('article'); el.className='card'; const preview=s.image?`<img class="preview" src="${s.image}" alt="${s.name} preview" />`:''; el.innerHTML=`<span class="tag">Steal A Brainrot Sniper Script</span>${preview}<h2>${s.name}</h2><p>${s.desc}</p><div class="meta"><button class="copy">Get script</button></div>`;el.querySelector('button').onclick=async()=>{await navigator.clipboard.writeText(s.code);el.querySelector('button').textContent='Got it!';setTimeout(()=>el.querySelector('button').textContent='Get script',1100)};cards.appendChild(el)});}
     search.oninput=render;render();
   </script>
 </body></html>
